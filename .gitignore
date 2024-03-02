@@ -1,0 +1,13 @@
+.terragrunt-cache
+    - .terragrunt-cache/*
+    - .terragrunt-cache/**/*
+    - .terragrunt-cache/**/**/*
+    - .terragrunt-cache/**/**/**/*
+    - .terragrunt-cache/**/**/**/**/*
+    - .terragrunt-cache/**/**/**/**/**/*
+    - .terragrunt-cache/**/**/**/**/**/**/*
+    - .terragrunt-cache/**/**/**/**/**/**/**/*
+    - .terragrunt-cache/**/**/**/**/**/**/**/**/*
+    - .terragrunt-cache/**/**/**/**/**/**/**/**/**/*
+    - .terragrunt-cache
+
