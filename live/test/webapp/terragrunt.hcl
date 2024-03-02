@@ -1,5 +1,5 @@
 terraform {
-  source = "../../../modules/webapp"
+  source = "../../../project"
 }
 
 inputs = {
