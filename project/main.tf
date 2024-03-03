@@ -1,6 +1,5 @@
 
 module "web_app" {
-  count               = var.enable_webapp ? 1 : 0
   source              = "./modules/webapp"
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -9,7 +8,6 @@ module "web_app" {
 }
 
 module "storage_account" {
-  count                = var.enable_storage_account ? 1 : 0
   source               = "./modules/storage_account"
   resource_group_name  = var.resource_group_name
   location             = var.location

@@ -13,3 +13,8 @@ variable "service_plan_name" {
 variable "web_app_name" {
   type = string
 }
+
+variable "enable_webapp" {
+  type    = bool
+  default = false
+}
