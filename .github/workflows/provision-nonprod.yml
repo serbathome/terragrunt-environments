@@ -42,12 +42,9 @@ jobs:
           chmod +x terragrunt_linux_amd64
           sudo mv terragrunt_linux_amd64 /usr/local/bin/terragrunt
 
-      # Install Azure CLI
-      - name: Install Azure CLI
-        uses: azure/CLI@v1
-        with:
-          azcliversion: 2.20.0
 
-      # Login to Azure
-      - name: Login to Azure
-        run: az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
