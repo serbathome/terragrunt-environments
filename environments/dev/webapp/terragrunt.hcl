@@ -7,6 +7,7 @@ inputs = {
   location            = "East US"
   service_plan_name = "sp-webapp-dev"
   web_app_name = "app-webapp-dev"
+  storage_account_name = "storagewebappdev"
 }
 
 include "root" {

@@ -17,6 +17,7 @@ on:
         options:
           - 'all'
           - 'webapp'
+          - 'storage'
       environment:
         description: 'Environment to provision'
         required: true
