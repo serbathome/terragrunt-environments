@@ -52,4 +52,4 @@ jobs:
       - name: Terragrunt Provision
         run: |
           cd environments
-          terragrunt run apply-all -auto-approve -terragrunt-non-interactive
+          terragrunt run-all apply -auto-approve -terragrunt-non-interactive
