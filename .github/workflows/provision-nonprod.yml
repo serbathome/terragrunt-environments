@@ -7,16 +7,16 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# # Get inputs
-# input:
-#   environment:
-#     description: 'Environment to provision (all, dev, test, uat)'
-#     required: true
-#     default: 'all'
-#   destroy:
-#     description: 'Destroy the environment'
-#     required: false
-#     default: 'false'
+# Get inputs
+input:
+  environment:
+    description: 'Environment to provision (all, dev, test, uat)'
+    required: true
+    default: 'all'
+  destroy:
+    description: 'Destroy the environment'
+    required: false
+    default: 'false'
 
 jobs:
   provision-nonprod-job:
