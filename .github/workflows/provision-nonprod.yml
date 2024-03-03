@@ -19,11 +19,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      # # Install Terraform
+      # - name: Install Terraform
+      #   uses: hashicorp/setup-terraform@v1
+      #   with:
+      #     terraform_version: 1.7.4
+
       # Install Terraform
       - name: Install Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.7.4
+        run: |
+          wget https://releases.hashicorp.com/terraform/1.7.4/terraform_1.7.4_linux_amd64.zip
+          unzip terraform_1.7.4_linux_amd64.zip
+          chmod +x terraform
+          sudo mv terraform /usr/local/bin/terraform
 
       # Install terragrunt
       - name: Install Terragrunt
