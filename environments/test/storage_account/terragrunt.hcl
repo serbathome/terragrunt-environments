@@ -3,11 +3,10 @@ terraform {
 }
 
 inputs = {
-  resource_group_name = "rg-webapp-test"
+  resource_group_name = "rg-storage-test"
   location            = "East US"
-  service_plan_name = "sp-webapp-test"
-  web_app_name = "app-webapp-test"
-  enable_webapp = true
+  storage_account_name = "storagewebapptest"
+  enable_storage_account = true
 }
 
 include "root" {
