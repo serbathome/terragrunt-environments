@@ -59,6 +59,11 @@ jobs:
 
       # Run terragrunt provision
       - name: Terragrunt Provision
+      if: ${{ github.event.inputs.destroy == 'false' }}
         run: |
           cd environments
           terragrunt run-all apply -auto-approve -terragrunt-non-interactive
+      else:
+        run: |
+          cd environments
+          terragrunt run-all destroy -auto-approve -terragrunt-non-interactive
