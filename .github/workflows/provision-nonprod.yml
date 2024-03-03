@@ -53,7 +53,7 @@ jobs:
         run: |
           cd environments
           terragrunt run-all apply -auto-approve -terragrunt-non-interactive
-      else
+      if: ${{ github.event.inputs.destroy == 'true' }}
         run: |
           cd environments
           terragrunt run-all destroy -auto-approve -terragrunt-non-interactive
