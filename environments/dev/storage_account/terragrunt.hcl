@@ -1,5 +1,5 @@
 terraform {
-  source = "../../../project/storage-account"
+  source = "../../../project/storage_account"
 }
 
 inputs = {
