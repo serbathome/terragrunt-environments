@@ -39,7 +39,7 @@ jobs:
       # Install Terraform
       - name: Install Terraform
         run: |
-          wget https://releases.hashicorp.com/terraform/1.7.4/terraform_1.7.4_linux_amd64.zip
+          wget -q https://releases.hashicorp.com/terraform/1.7.4/terraform_1.7.4_linux_amd64.zip
           unzip terraform_1.7.4_linux_amd64.zip
           chmod +x terraform
           sudo mv terraform /usr/local/bin/terraform
@@ -47,7 +47,7 @@ jobs:
       # Install terragrunt
       - name: Install Terragrunt
         run: |
-          wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.55.11/terragrunt_linux_amd64
+          wget -q https://github.com/gruntwork-io/terragrunt/releases/download/v0.55.11/terragrunt_linux_amd64
           chmod +x terragrunt_linux_amd64
           sudo mv terragrunt_linux_amd64 /usr/local/bin/terragrunt
 
@@ -101,6 +101,6 @@ jobs:
             cd environments/${{ github.event.inputs.environment }}/${{ github.event.inputs.service }}
             terragrunt apply -auto-approve -terragrunt-non-interactive
           fi
-          
+
           
 
