@@ -8,3 +8,7 @@ inputs = {
   service_plan_name = "sp-webapp-dev"
   web_app_name = "app-webapp-dev"
 }
+
+include "root" {
+  path = find_in_parent_folders()
+}
