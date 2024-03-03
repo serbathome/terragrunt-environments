@@ -7,6 +7,7 @@ on:
       destroy:
         description: 'Destroy the environment'
         required: false
+        type: 'boolean'
         default: 'false'
 
 jobs:
