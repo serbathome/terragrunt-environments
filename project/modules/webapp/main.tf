@@ -21,7 +21,7 @@ resource "azurerm_service_plan" "service_plan" {
   location            = azurerm_resource_group.group.location
   resource_group_name = azurerm_resource_group.group.name
   os_type             = "Linux"
-  sku_name            = "S1"
+  sku_name            = "B1"
 }
 
 resource "azurerm_linux_web_app" "web_app" {
