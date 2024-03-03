@@ -1,5 +1,5 @@
 terraform {
-  source = "../../../project"
+  source = "../../../project/webapp"
 }
 
 inputs = {
@@ -7,7 +7,6 @@ inputs = {
   location            = "East US"
   service_plan_name = "sp-webapp-test"
   web_app_name = "app-webapp-test"
-  enable_webapp = true
 }
 
 include "root" {

@@ -1,12 +1,11 @@
 terraform {
-  source = "../../../project"
+  source = "../../../project/storage-account"
 }
 
 inputs = {
   resource_group_name = "rg-storage-dev"
   location            = "East US"
   storage_account_name = "storagewebappdev"
-  enable_storage_account = true
 }
 
 include "root" {
