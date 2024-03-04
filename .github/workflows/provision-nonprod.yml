@@ -39,7 +39,7 @@ jobs:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
       ARM_ACCESS_KEY: ${{ secrets.ARM_ACCESS_KEY }}
-      ENVS: dev,test,uat
+      ENVS: "dev test uat"
 
     steps:
       - name: Checkout
