@@ -1,4 +1,4 @@
-# GitHub actions pipeline for terragrunt infrastructure provisioning
+# GitHub Actions pipeline for terragrunt infrastructure provisioning
 This is demo of terragrunt deployment managed by GitHub actions. I'm building infrastructure for a fictional application which consists of an app service and storage account.
 
 This application is deployed in several environments:
