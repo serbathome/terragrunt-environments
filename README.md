@@ -1,11 +1,11 @@
 # GitHub Actions pipeline for terragrunt infrastructure provisioning
-This is demo of terragrunt deployment managed by GitHub actions. I'm building infrastructure for a fictional application which consists of an app service and storage account.
+This project showcases a demonstration of Terraform deployment managed by GitHub Actions. I'm setting up infrastructure for a fictional application comprising an app service and a storage account.
 
-This application is deployed in several environments:
+The application is deployed across various environments:
 - DEV (for ongoing development)
-- TEST (for intergration testing)
+- TEST (for integration testing)
 - UAT (for user acceptance testing)
 
-Pipeline is providing flexible optiong for provisioning from all services in all environments to specific service in specific environment. You can also de-provision a previsously deployed service.
+The pipeline offers flexible options for provisioning services across all environments or targeting specific services in specific environments. Additionally, you can de-provision a previously deployed service.
 
-Underliyng terraform modules are pulled from GitHub as well.
+Underlying Terraform modules are also fetched from GitHub.
