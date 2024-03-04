@@ -1,5 +1,5 @@
 terraform {
-  source = "../../../project/webapp"
+  source = "git::https://github.com/serbathome/tfmodule-webapp.git?ref=main"
 }
 
 inputs = {

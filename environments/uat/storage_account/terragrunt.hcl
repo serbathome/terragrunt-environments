@@ -1,5 +1,5 @@
 terraform {
-  source = "../../../project/storage_account"
+  source = "git::https://github.com/serbathome/tfmodule-storage-account.git?ref=main"
 }
 
 inputs = {
