@@ -33,6 +33,13 @@ jobs:
   provision-nonprod-job:
     runs-on: ubuntu-latest
 
+    env:
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      ARM_ACCESS_KEY: ${{ secrets.ARM_ACCESS_KEY }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -58,21 +65,9 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # Load Azure credentials
-      - name: Load Azure credentials
-        run: |
-          export ARM_CLIENT_ID=${{ secrets.ARM_CLIENT_ID }}
-          export ARM_CLIENT_SECRET=${{ secrets.ARM_CLIENT_SECRET }}
-          export ARM_SUBSCRIPTION_ID=${{ secrets.ARM_SUBSCRIPTION_ID }}
-          export ARM_TENANT_ID=${{ secrets.ARM_TENANT_ID }}
-
       # Run terragrunt provision
       - name: Terragrunt Provision
         run: |
-          ARM_CLIENT_ID=${{ secrets.ARM_CLIENT_ID }}
-          ARM_CLIENT_SECRET=${{ secrets.ARM_CLIENT_SECRET }}
-          ARM_SUBSCRIPTION_ID=${{ secrets.ARM_SUBSCRIPTION_ID }}
-          ARM_TENANT_ID=${{ secrets.ARM_TENANT_ID }}
           # Provision all services in all environments
           if [[ ${{ github.event.inputs.destroy }} == "true" && ${{ github.event.inputs.service }} == "all" && ${{ github.event.inputs.environment }} == "all" ]]; then
             cd environments
