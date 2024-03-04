@@ -1,4 +1,4 @@
-# GitHub Actions pipeline for terragrunt infrastructure provisioning
+# GitHub actions & terragrunt IaC
 This project showcases a demonstration of Terraform deployment managed by GitHub Actions. I'm setting up infrastructure for a fictional application comprising an app service and a storage account.
 
 The application is deployed across various environments:
