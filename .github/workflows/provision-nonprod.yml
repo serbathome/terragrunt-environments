@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
     inputs:
       destroy:
-        description: 'Destroy the environment'
+        description: 'Destroy it'
         required: false
         type: 'boolean'
-        default: 'false'
+        default: false
       service:
         description: 'Service to provision'
         required: true
@@ -39,6 +39,7 @@ jobs:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
       ARM_ACCESS_KEY: ${{ secrets.ARM_ACCESS_KEY }}
+      ENVS: dev,test,uat
 
     steps:
       - name: Checkout
@@ -87,7 +88,8 @@ jobs:
             terragrunt run-all apply -auto-approve -terragrunt-non-interactive
           fi
           # Provision a specific service in all environments
-          environments=(dev test uat)
+          # environments=(dev test uat)
+          environments=($ENVS)
           base_path=`pwd`
           if [[ ${{ github.event.inputs.destroy }} == "true" && ${{ github.event.inputs.service }} != "all" && ${{ github.event.inputs.environment }} == "all" ]]; then
             for environment in "${environments[@]}"; do
